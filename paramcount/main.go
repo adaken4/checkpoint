@@ -7,6 +7,12 @@ func main() {
 	if len(args) == 0 {
 		os.Stdout.WriteString("0\n")
 	} else {
-		os.Stdout.WriteString(string(len(args)+'0') + "\n")
+		n := len(args)
+		params := ""
+		for n > 0 {
+			params = string(n%10+'0') + params
+			n /= 10
+		}
+		os.Stdout.WriteString(params + "\n")
 	}
 }

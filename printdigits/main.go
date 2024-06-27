@@ -1,10 +1,12 @@
 package main
 
-import "os"
+import (
+	"github.com/01-edu/z01"
+)
 
 func main() {
 	for i := '0'; i <= '9'; i++ {
-		os.Stdout.WriteString(string(i))
+		z01.PrintRune(i)
 	}
-	os.Stdout.WriteString("\n")
+	z01.PrintRune('\n')
 }

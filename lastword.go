@@ -28,20 +28,18 @@ func LastWord(s string) string {
 		if sRunes[i] != ' ' {
 			if end == -1 {
 				end = i + 1
+			} else if i == 0 && start == -1 {
+				start = start + 1
 			}
 		} else if end != -1 {
 			start = i + 1
 			break
-		} else if end == -1 {
-			continue
-		} else {
-			return "\n"
 		}
 	}
 
 	if start == -1 || end == -1 {
-		return string(sRunes) + "\n"
+		return "\n"
 	}
 
-	return string(sRunes[start:end]) + "\n"
+	return s[start:end] + "\n"
 }

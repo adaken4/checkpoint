@@ -41,7 +41,7 @@ func main() {
 		os.Stdout.WriteString(checkpoint.Itoa(result) + "\n")
 	case "-":
 		result := sub(n1, n2)
-		if result > 0 && n1 < 0 && n2 > 0 {
+		if result > 0 && n1 < 0 && n2 < 0 {
 			return
 		}
 		os.Stdout.WriteString(checkpoint.Itoa(result) + "\n")
